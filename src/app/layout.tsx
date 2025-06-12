@@ -10,6 +10,7 @@ import { store } from "@/Redux/store/store";
 import { Box } from "@mui/material";
 import Navbar from "@/components/navbar";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
               <Navbar />
               <Container>{children}</Container>
               <Toaster position="top-center" reverseOrder={false} />
+              <Footer/>
             </>
           }
         </Provider>

@@ -34,13 +34,12 @@ function Featured({}: Iprops) {
       </Typography>
       <Stack
         gap={2}
-        marginBlock={{xl:6}}
+        marginBlock={{ xl: 6 }}
         sx={{
           width: "100%",
           height: "80vh",
           overflow: "hidden",
           justifyContent: "center",
-          
         }}
         direction={"row"}
       >
@@ -101,15 +100,19 @@ function Featured({}: Iprops) {
         sx={{
           width: "100%",
           overflow: "hidden",
-          marginBlock: {xs:"30px",md:"50px"},
+          marginBlock: { xs: "30px", md: "50px" },
           flexWrap: "wrap",
         }}
         direction={"row"}
       >
-        <Card sx={{ maxWidth: 345,height:"220px", textAlign: "center" }}>
+        <Card sx={{ maxWidth: 345, height: "220px", textAlign: "center" }}>
           <CardActionArea>
             <Image
-              style={{ overflow: "hidden", objectFit: "fill",paddingTop:"15px" }}
+              style={{
+                overflow: "hidden",
+                objectFit: "fill",
+                paddingTop: "15px",
+              }}
               src={services1}
               alt="services1"
             />
@@ -123,10 +126,14 @@ function Featured({}: Iprops) {
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card sx={{ maxWidth: 345,height:"220px", textAlign: "center" }}>
+        <Card sx={{ maxWidth: 345, height: "220px", textAlign: "center" }}>
           <CardActionArea>
             <Image
-              style={{ overflow: "hidden", objectFit: "fill",paddingTop:"15px" }}
+              style={{
+                overflow: "hidden",
+                objectFit: "fill",
+                paddingTop: "15px",
+              }}
               src={services2}
               alt="services2"
             />
@@ -140,10 +147,14 @@ function Featured({}: Iprops) {
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card sx={{ maxWidth: 345,height:"220px", textAlign: "center" }}>
+        <Card sx={{ maxWidth: 345, height: "220px", textAlign: "center" }}>
           <CardActionArea>
             <Image
-              style={{ overflow: "hidden", objectFit: "fill",paddingTop:"15px" }}
+              style={{
+                overflow: "hidden",
+                objectFit: "fill",
+                paddingTop: "15px",
+              }}
               src={services3}
               alt="services3"
             />

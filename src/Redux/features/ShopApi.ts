@@ -10,8 +10,15 @@ reducerPath:"shop",
     baseQuery:(fetchBaseQuery({baseUrl:"https://ecommerce.routemisr.com/api/v1/"})),
     endpoints:(builder)=>({
         getProducts :builder.query({
-            query:()=>{
-               return {url:"/products",method:"Get"}
+            query:({pageNumber})=>{
+
+                let allApi = "/products?limit=10&page=1";
+
+                if (pageNumber) {
+                  allApi += `?limit=10&page=${pageNumber}`;
+                }
+        
+                return { url: allApi,method:"Get" };
             }
         }),
         getSubProducts :builder.query({
@@ -23,3 +30,16 @@ reducerPath:"shop",
 })
 
 export const {useGetProductsQuery,useGetSubProductsQuery} =ShopApi
+
+
+
+// let allApi = "/products";
+
+// if (category) {
+//   allApi += `?category=${category}`;
+// }
+// if (type) {
+//   allApi += `${category ? "&" : "?"}type=${type}`;
+// }
+
+// return { url: allApi };

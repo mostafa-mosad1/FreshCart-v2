@@ -1,19 +1,18 @@
 "use client";
 import { useGetProductsQuery } from "@/Redux/features/ShopApi";
-import { log } from "console";
-import ProductCard from "./ProductCard";
 import { Stack } from "@mui/material";
+import SubProductCard from "./SubProductCard";
 
 
 
 
 
-export default function AllProductsData() {
+export default function SubProductsData() {
  
 
     const { isLoading, data, error } = useGetProductsQuery("");
   console.log(data);
-  let products = data?.data?.map((pro: any) =>  <ProductCard id={pro.id} name={pro.title} price={pro.price} images={pro.images} />);
+  let products = data?.data?.map((pro: any) =>  <SubProductCard  id={pro.id} name={pro.title} price={pro.price} images={pro.images}  />);
 
   
   return <Stack

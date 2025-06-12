@@ -189,7 +189,7 @@ interface Iprops {
   price: string;
 }
 
-export default function ProductCard({ id, name, images, price }: Iprops) {
+export default function SubProductCard({ id, name, images, price }: Iprops) {
   let settings = {
     dots: true,
     // slidesToShow: 3,
@@ -225,11 +225,6 @@ export default function ProductCard({ id, name, images, price }: Iprops) {
 
         <Slider {...settings}>
                 {images.map((img, i) => (
-                //    <CardMedia
-                //    sx={{ width: "100%", height: "100%" }}
-                //    image={img}
-                //    title="Product image"
-                //  />
                 <img key={i} style={{ width: "100%", height: "100%", objectFit: "fill"}} src={`${img}`} />
                 ))}
               </Slider>

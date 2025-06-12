@@ -1,6 +1,6 @@
 import { Box, Skeleton, Stack } from "@mui/material";
 
-export default function SkeletonHome() {
+export default function HomeSubProductsSkeleton() {
   return (
     <Box
       sx={{

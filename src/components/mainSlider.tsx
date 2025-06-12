@@ -23,7 +23,7 @@ const MinSlider = () => {
 
   return (
     <>
-      <Stack direction={"row"} gap={1} >
+      <Stack  direction={"row"} sx={{marginBlock:6}} gap={1} >
         <Box sx={{ width: {xs:"100%",md:"75%"},height:"100%" }}>
           <Slider {...settings}>
             <Box>

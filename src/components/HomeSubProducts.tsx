@@ -1,19 +1,19 @@
 "use client";
 import { useGetSubProductsQuery } from "@/Redux/features/ShopApi";
-import ProductCard from "./ProductCard";
-import { Box, Divider, Skeleton, Stack, Typography } from "@mui/material";
-import SkeletonHome from "./SkeletonHome";
+import { Divider, Stack, Typography } from "@mui/material";
 import musicImage from "../assests/musicImage.png";
 import Image from "next/image";
+import HomeSubProductsSkeleton from "./HomeSubProductsSkeleton";
+import SubProductCard from "./SubProductCard";
 
-export default function SubProductsHome() {
+export default function HomeSubProducts() {
   const { isLoading, data, error } = useGetSubProductsQuery("");
 
 
 
   console.log(data);
   let products = data?.data?.map((pro: any) => (
-    <ProductCard
+    <SubProductCard
       id={pro.id}
       name={pro.title}
       price={pro.price}
@@ -35,7 +35,7 @@ export default function SubProductsHome() {
         marginBlock={{xl:6}}
       >
         {Array.from(new Array(10)).map((item, index) => (
-          <SkeletonHome />
+          <HomeSubProductsSkeleton />
         ))}
       </Stack>: <Stack
         justifyContent={"center"}

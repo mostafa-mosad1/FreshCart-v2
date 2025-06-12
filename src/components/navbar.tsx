@@ -101,15 +101,47 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography
-                    sx={{ textAlign: "center", textTransform: "capitalize" }}
-                  >
-                    {page}
-                  </Typography>
-                </MenuItem>
-              ))}
+              {
+                pages.map((page) => {
+                  if(page=="Home"){
+                    return  <Link style={{ textDecoration: "none" }} href={`/`}>
+                    <Button
+                      className="text-background text-sm font-semibold"
+                      key={page}
+                      onClick={handleCloseNavMenu}
+                      sx={{
+                        my: 2,
+                        display: "block",
+                        textTransform: "capitalize",
+                        color: "black",
+                        textDecoration: "none",
+                         width:"100%"
+                      }}
+                    >
+                      {page}
+                    </Button>
+                  </Link>
+                  }else{
+                    return  <Link style={{ textDecoration: "none" }} href={`/${page}`}>
+                    <Button
+                      className="text-background text-sm font-semibold"
+                      key={page}
+                      onClick={handleCloseNavMenu}
+                      sx={{
+                        my: 2,
+                        display: "block",
+                        textTransform: "capitalize",
+                        color: "black",
+                        textDecoration: "none",
+                        width:"100%"
+                      }}
+                    >
+                      {page}
+                    </Button>
+                  </Link>
+                  }
+                })
+              }
               <Box
                 sx={{
                   display: "flex",
@@ -215,24 +247,43 @@ function Navbar() {
         >
           // full screen
           {typeof window !== "undefined" && localStorage.getItem("token")
-            ? pages.map((page) => (
-                <Link style={{ textDecoration: "none" }} href={`/${page}`}>
-                  <Button
-                    className="text-background text-sm font-semibold"
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      my: 2,
-                      display: "block",
-                      textTransform: "capitalize",
-                      color: "black",
-                      textDecoration: "none",
-                    }}
-                  >
-                    {page}
-                  </Button>
-                </Link>
-              ))
+            ? pages.map((page) => {
+              if(page=="Home"){
+                return  <Link style={{ textDecoration: "none" }} href={`/`}>
+                <Button
+                  className="text-background text-sm font-semibold"
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    display: "block",
+                    textTransform: "capitalize",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  {page}
+                </Button>
+              </Link>
+              }else{
+                return  <Link style={{ textDecoration: "none" }} href={`/${page}`}>
+                <Button
+                  className="text-background text-sm font-semibold"
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    display: "block",
+                    textTransform: "capitalize",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  {page}
+                </Button>
+              </Link>
+              }
+            })
             : ""}
         </Box>
         <Box
