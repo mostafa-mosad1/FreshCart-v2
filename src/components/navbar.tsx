@@ -104,7 +104,7 @@ function Navbar() {
               {
                 pages.map((page) => {
                   if(page=="Home"){
-                    return  <Link style={{ textDecoration: "none" }} href={`/`}>
+                    return  <Link key={page} style={{ textDecoration: "none" }} href={`/`}>
                     <Button
                       className="text-background text-sm font-semibold"
                       key={page}
@@ -122,7 +122,7 @@ function Navbar() {
                     </Button>
                   </Link>
                   }else{
-                    return  <Link style={{ textDecoration: "none" }} href={`/${page}`}>
+                    return  <Link key={page} style={{ textDecoration: "none" }} href={`/${page}`}>
                     <Button
                       className="text-background text-sm font-semibold"
                       key={page}
@@ -249,7 +249,7 @@ function Navbar() {
           {typeof window !== "undefined" && localStorage.getItem("token")
             ? pages.map((page) => {
               if(page=="Home"){
-                return  <Link style={{ textDecoration: "none" }} href={`/`}>
+                return  <Link  key={page} style={{ textDecoration: "none" }} href={`/`}>
                 <Button
                   className="text-background text-sm font-semibold"
                   key={page}
@@ -266,7 +266,7 @@ function Navbar() {
                 </Button>
               </Link>
               }else{
-                return  <Link style={{ textDecoration: "none" }} href={`/${page}`}>
+                return  <Link key={page} style={{ textDecoration: "none" }} href={`/${page}`}>
                 <Button
                   className="text-background text-sm font-semibold"
                   key={page}
